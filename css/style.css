@@ -1,43 +1,175 @@
-body{
+body {
   font-family: Arial, sans-serif;
   background-color: #f4f4f4;
-  margin:0;
-  padding:0;
-  line-height:1.6;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
 }
-.builer-header-1{
-  background:#333;
-  color:#fff;
-  padding:20px 0;
-  text-align:center;
+.builer-header-1 {
+  background: #333;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
 }
-.builer-nav-2 ul{
-  list-style:none;
-  padding:0;
-  margin:0;
-  background:#444;
-  text-align:center;
+.builer-nav-2 ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background: #444;
+  text-align: center;
 }
-.builer-nav-2 ul li{
-  display:inline-block;
-  margin:0 15px;
+.builer-nav-2 ul li {
+  display: inline-block;
+  margin: 0 15px;
 }
-.builer-nav-2 ul li a{
-  color:#fff;
-  text-decoration:none;
-  font-weight:bold;
+.builer-nav-2 ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
 }
-.builer-container-3{
-  max-width:800px;
-  margin:20px auto;
-  padding:0 20px;
-  background:#fff;
-  box-shadow:0 0 10px rgba(0,0,0,0.1);
+.builer-container-3 {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 0 20px;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-.builer-footer-4{
-  background:#333;
-  color:#fff;
-  text-align:center;
-  padding:10px 0;
-  margin-top:20px;
+.builer-footer-4 {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  margin-top: 20px;
+}
+
+/* Family Card Component Styles */
+.family-card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 40px 20px;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.family-card-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family:
+    "Hiragino Kaku Gothic Pro",
+    -apple-system,
+    "Roboto",
+    "Helvetica",
+    sans-serif;
+  color: #333;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 21px;
+}
+
+.family-card-title {
+  color: #333;
+  font-feature-settings:
+    "liga" off,
+    "clig" off;
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 22px;
+}
+
+.family-card-subtitle {
+  color: #333;
+  font-feature-settings:
+    "liga" off,
+    "clig" off;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.family-card-images {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 2px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 21px;
+}
+
+.family-card-image {
+  flex: 1;
+  min-width: 240px;
+  max-width: 278px;
+  height: auto;
+  aspect-ratio: 0.69;
+  object-fit: contain;
+}
+
+.family-card-description {
+  color: #333;
+  text-align: center;
+  font-feature-settings:
+    "liga" off,
+    "clig" off;
+  font-family:
+    "Hiragino Kaku Gothic Pro",
+    -apple-system,
+    "Roboto",
+    "Helvetica",
+    sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 24px;
+}
+
+.text-bold {
+  font-weight: 600;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .family-card-container {
+    padding: 20px 15px;
+  }
+
+  .family-card-title {
+    font-size: 28px;
+  }
+
+  .family-card-subtitle {
+    font-size: 18px;
+  }
+
+  .family-card-images {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .family-card-image {
+    min-width: 200px;
+    max-width: 300px;
+  }
+
+  .family-card-description {
+    font-size: 14px;
+    line-height: 22px;
+  }
+}
+
+@media (max-width: 480px) {
+  .family-card-title {
+    font-size: 24px;
+  }
+
+  .family-card-subtitle {
+    font-size: 16px;
+  }
+
+  .family-card-image {
+    min-width: 180px;
+    max-width: 280px;
+  }
 }
