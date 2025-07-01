@@ -1,43 +1,1105 @@
-body{
+body {
   font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
-  margin:0;
-  padding:0;
-  line-height:1.6;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  color: #000;
 }
-.builer-header-1{
-  background:#333;
-  color:#fff;
-  padding:20px 0;
-  text-align:center;
+
+/* Main Container */
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px;
+  min-height: 100vh;
 }
-.builer-nav-2 ul{
-  list-style:none;
-  padding:0;
-  margin:0;
-  background:#444;
-  text-align:center;
+
+/* Family Card Section */
+.family-card-section {
+  display: flex;
+  width: 100%;
+  max-width: 1048px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background: #fff;
+  padding: 40px 20px;
+  margin-bottom: 78px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-.builer-nav-2 ul li{
-  display:inline-block;
-  margin:0 15px;
+
+.family-card-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family:
+    "Hiragino Kaku Gothic Pro",
+    -apple-system,
+    "Roboto",
+    "Helvetica",
+    sans-serif;
+  color: #333;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 21px;
 }
-.builer-nav-2 ul li a{
-  color:#fff;
-  text-decoration:none;
-  font-weight:bold;
+
+.family-card-title {
+  color: #333;
+  font-feature-settings:
+    "liga" off,
+    "clig" off;
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 22px;
 }
-.builer-container-3{
-  max-width:800px;
-  margin:20px auto;
-  padding:0 20px;
-  background:#fff;
-  box-shadow:0 0 10px rgba(0,0,0,0.1);
+
+.family-card-subtitle {
+  color: #333;
+  font-feature-settings:
+    "liga" off,
+    "clig" off;
+  font-size: 20px;
+  font-weight: 600;
 }
-.builer-footer-4{
-  background:#333;
-  color:#fff;
-  text-align:center;
-  padding:10px 0;
-  margin-top:20px;
+
+.family-card-images {
+  display: flex;
+  align-items: center;
+  align-self: stretch;
+  width: 100%;
+  gap: 2px;
+  justify-content: center;
+  flex-wrap: wrap;
+  background: #fff;
+  margin-bottom: 21px;
+}
+
+.family-card-image {
+  align-self: stretch;
+  position: relative;
+  display: flex;
+  min-width: 240px;
+  flex-grow: 1;
+  flex-shrink: 1;
+  width: 278px;
+  max-width: 278px;
+  aspect-ratio: 0.69;
+  object-fit: contain;
+}
+
+.family-card-description {
+  color: #333;
+  text-align: center;
+  font-feature-settings:
+    "liga" off,
+    "clig" off;
+  font-family:
+    "Hiragino Kaku Gothic Pro",
+    -apple-system,
+    "Roboto",
+    "Helvetica",
+    sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 24px;
+}
+
+.text-bold {
+  font-weight: 600;
+}
+
+/* Application Section */
+.application-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  max-width: 1048px;
+}
+
+.application-title {
+  color: #333;
+  text-align: center;
+  font-feature-settings:
+    "liga" off,
+    "clig" off;
+  font-family:
+    "Hiragino Kaku Gothic Pro",
+    -apple-system,
+    "Roboto",
+    "Helvetica",
+    sans-serif;
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 22px;
+}
+
+.application-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.application-subtitle {
+  color: #333;
+  text-align: center;
+  font-feature-settings:
+    "liga" off,
+    "clig" off;
+  font-family:
+    "Hiragino Kaku Gothic Pro",
+    -apple-system,
+    "Roboto",
+    "Helvetica",
+    sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+
+.application-button {
+  max-width: 398px;
+  width: 100%;
+  background: #df0101;
+  color: white;
+  font-family:
+    "Hiragino Kaku Gothic Pro",
+    -apple-system,
+    "Roboto",
+    "Helvetica",
+    sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  padding: 16px 32px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.application-button:hover {
+  background: #c50101;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(223, 1, 1, 0.3);
+}
+
+.application-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(223, 1, 1, 0.3);
+}
+
+.application-link {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  overflow: hidden;
+  font-family:
+    "Noto Sans CJK JP",
+    -apple-system,
+    "Roboto",
+    "Helvetica",
+    sans-serif;
+  font-size: 14px;
+  color: #006a9e;
+  font-weight: 400;
+  white-space: nowrap;
+  justify-content: flex-start;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.application-link:hover {
+  color: #004d75;
+  text-decoration: underline;
+}
+
+.application-link span {
+  color: #006a9e;
+  font-feature-settings:
+    "liga" off,
+    "clig" off;
+}
+
+.link-icon {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .main-container {
+    padding: 10px;
+  }
+
+  .family-card-section {
+    margin-bottom: 50px;
+    padding: 20px 15px;
+  }
+
+  .family-card-title {
+    font-size: 28px;
+  }
+
+  .family-card-subtitle {
+    font-size: 18px;
+  }
+
+  .family-card-images {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .family-card-image {
+    min-width: 200px;
+    max-width: 300px;
+  }
+
+  .family-card-description {
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  .application-title {
+    font-size: 22px;
+  }
+
+  .application-button {
+    max-width: 300px;
+    padding: 14px 24px;
+  }
+
+  .application-link {
+    font-size: 12px;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .family-card-title {
+    font-size: 24px;
+  }
+
+  .family-card-subtitle {
+    font-size: 16px;
+  }
+
+  .family-card-image {
+    min-width: 180px;
+    max-width: 280px;
+  }
+
+  .application-title {
+    font-size: 20px;
+  }
+
+  .application-button {
+    max-width: 280px;
+    padding: 12px 20px;
+  }
+}
+
+/* Family Card Information Accordion Section */
+.info-section {
+  display: flex;
+  padding-left: 196px;
+  padding-right: 196px;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  margin-top: 60px;
+}
+
+.accordion-container {
+  display: flex;
+  width: 100%;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.accordion-item {
+  font-family:
+    "RakutenSansJP_W", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Meiryo",
+    "Yu Gothic", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #333;
+  text-align: left;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.accordion-header {
+  font-family:
+    "RakutenSansJP_W", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Meiryo",
+    "Yu Gothic", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  color: #333;
+  text-align: left;
+  box-sizing: border-box;
+  margin: 0;
+  font-weight: 700;
+  line-height: 1.5;
+  font-size: 26px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 16px 24px;
+  background-color: transparent;
+  border: 1px solid #ddd;
+  border-radius: 8px 8px 0 0;
+  overflow-anchor: none;
+  transition:
+    background-color 0.2s ease-out,
+    border-color 0.2s ease-out;
+  cursor: pointer;
+}
+
+.accordion-header:hover {
+  background-color: #f8f9fa;
+}
+
+.accordion-title {
+  flex: 1;
+  margin-right: 40px;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.accordion-icon {
+  display: inline-block;
+  font-size: 16px;
+  transition: transform 0.3s ease;
+  color: #333;
+}
+
+.accordion-content {
+  border: solid #ddd;
+  border-width: 0 1px 1px 1px;
+  border-radius: 0 0 8px 8px;
+  background: #fff;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+
+.accordion-content.expanded {
+  max-height: 1000px;
+  padding: 19px;
+}
+
+.info-table {
+  display: flex;
+  width: 100%;
+  max-width: 1009px;
+  gap: 14px;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-start;
+}
+
+.info-column {
+  flex: 1;
+  display: flex;
+  min-height: 330px;
+  width: 50%;
+  flex-direction: column;
+  align-items: stretch;
+  font-family:
+    "Hiragino Kaku Gothic Pro",
+    -apple-system,
+    "Roboto",
+    "Helvetica",
+    sans-serif;
+  justify-content: flex-start;
+}
+
+.info-row {
+  display: flex;
+  min-height: 110px;
+  width: 100%;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 16px;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #d1d1d1;
+}
+
+.info-row:last-child {
+  border-bottom: none;
+}
+
+.info-label {
+  font-feature-settings:
+    "liga" off,
+    "clig" off;
+  display: flex;
+  min-height: 110px;
+  padding-top: 15px;
+  padding-bottom: 71px;
+  align-items: flex-start;
+  gap: 8px;
+  color: #4d4d4d;
+  font-weight: 600;
+  justify-content: flex-start;
+  flex-grow: 1;
+  flex-shrink: 1;
+  width: 128px;
+  min-width: 128px;
+}
+
+.info-value {
+  color: #333;
+  font-feature-settings:
+    "liga" off,
+    "clig" off;
+  display: flex;
+  min-width: 240px;
+  min-height: 110px;
+  padding-top: 15px;
+  padding-bottom: 25px;
+  flex-direction: column;
+  align-items: stretch;
+  font-weight: 300;
+  line-height: 24px;
+  justify-content: flex-start;
+  flex-grow: 1;
+  flex-shrink: 1;
+  width: 306px;
+}
+
+.fee-main,
+.issuance-main {
+  color: #333;
+  font-feature-settings:
+    "liga" off,
+    "clig" off;
+  font-size: 16px;
+  font-weight: 300;
+  margin-bottom: 11px;
+}
+
+.fee-note,
+.issuance-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.note-symbol {
+  color: #333;
+  font-feature-settings:
+    "liga" off,
+    "clig" off;
+  flex-shrink: 0;
+}
+
+.note-text {
+  color: #333;
+  font-feature-settings:
+    "liga" off,
+    "clig" off;
+  line-height: 21px;
+  flex: 1;
+}
+
+.services-list {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 30px;
+  font-family:
+    "Hiragino Kaku Gothic Pro",
+    -apple-system,
+    "Roboto",
+    "Helvetica",
+    sans-serif;
+  color: #333;
+  font-weight: 300;
+  font-size: 14px;
+  justify-content: flex-start;
+  margin-bottom: 8px;
+}
+
+.service-item {
+  color: #333;
+  font-feature-settings:
+    "liga" off,
+    "clig" off;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  justify-content: flex-start;
+}
+
+.services-link {
+  color: #006a9e;
+  font-feature-settings:
+    "liga" off,
+    "clig" off;
+  display: flex;
+  min-height: 35px;
+  width: 100%;
+  align-items: center;
+  overflow: hidden;
+  font-family:
+    "Noto Sans CJK JP",
+    -apple-system,
+    "Roboto",
+    "Helvetica",
+    sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  justify-content: flex-end;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.services-link:hover {
+  color: #004d75;
+  text-decoration: underline;
+}
+
+.info-notes {
+  display: flex;
+  width: 100%;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  flex-direction: column;
+  align-items: stretch;
+  font-family:
+    "Hiragino Kaku Gothic Pro",
+    -apple-system,
+    "Roboto",
+    "Helvetica",
+    sans-serif;
+  font-size: 14px;
+  color: #686868;
+  font-weight: 300;
+  justify-content: flex-start;
+  margin-top: 20px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.note-row {
+  display: flex;
+  max-width: 100%;
+  width: 1000px;
+  align-items: flex-start;
+  gap: 8px;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin-bottom: 4px;
+}
+
+.note-row:last-child {
+  margin-bottom: 0;
+}
+
+/* Responsive Design for Accordion */
+@media (max-width: 768px) {
+  .info-section {
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 40px;
+  }
+
+  .accordion-container {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .accordion-title {
+    font-size: 20px;
+  }
+
+  .info-table {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .info-column {
+    width: 100%;
+  }
+
+  .info-label {
+    width: 100%;
+    min-width: auto;
+    padding-bottom: 10px;
+    min-height: auto;
+  }
+
+  .info-value {
+    min-width: 100%;
+    width: 100%;
+    padding-top: 0;
+    min-height: auto;
+  }
+
+  .info-row {
+    flex-direction: column;
+    min-height: auto;
+    padding: 15px 0;
+  }
+
+  .services-list {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .services-link {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .info-section {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .accordion-header {
+    padding: 12px 16px;
+  }
+
+  .accordion-title {
+    font-size: 18px;
+    margin-right: 20px;
+  }
+
+  .accordion-content.expanded {
+    padding: 15px;
+  }
+
+  .info-label {
+    font-size: 14px;
+  }
+
+  .info-value {
+    font-size: 14px;
+  }
+
+  .fee-note,
+  .issuance-note {
+    font-size: 12px;
+  }
+
+  .services-list {
+    font-size: 12px;
+  }
+
+  .info-notes {
+    font-size: 12px;
+  }
+}
+
+/* Family Card Basic Information Accordion */
+.accordion-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 60px;
+  padding: 60px 0;
+}
+
+.accordion-wrapper {
+  display: flex;
+  width: 100%;
+  max-width: 1048px;
+  flex-direction: column;
+  align-items: stretch;
+  font-family:
+    "Rakuten Sans JP",
+    -apple-system,
+    "Roboto",
+    "Helvetica",
+    sans-serif;
+  font-size: 16px;
+  color: #333;
+  font-weight: 600;
+  justify-content: center;
+}
+
+.accordion-header {
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  width: 100%;
+  padding: 16px 24px;
+  gap: 8px;
+  justify-content: space-between;
+  background: #fff;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.accordion-header:hover {
+  background-color: #f8f9fa;
+}
+
+.accordion-title {
+  color: #333;
+  font-feature-settings:
+    "liga" off,
+    "clig" off;
+  flex: 1;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.accordion-icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.accordion-content {
+  border-radius: 0 0 8px 8px;
+  display: flex;
+  margin-top: 8px;
+  width: 100%;
+  padding: 19px;
+  flex-direction: column;
+  background: #fff;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+
+.accordion-content.expanded {
+  max-height: 1000px;
+}
+
+.info-grid {
+  display: flex;
+  width: 100%;
+  max-width: 1010px;
+  align-items: start;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.info-column-left,
+.info-column-right {
+  display: flex;
+  min-width: 240px;
+  min-height: 330px;
+  flex-direction: column;
+  align-items: stretch;
+  font-family:
+    "Hiragino Kaku Gothic Pro",
+    -apple-system,
+    "Roboto",
+    "Helvetica",
+    sans-serif;
+  justify-content: flex-start;
+  width: 498px;
+}
+
+.info-column-right {
+  width: 497px;
+}
+
+.info-row {
+  border-color: #d1d1d1;
+  border-style: solid;
+  border-bottom-width: 1px;
+  display: flex;
+  min-height: 110px;
+  width: 100%;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 16px;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.info-row:last-child {
+  border-bottom: none;
+}
+
+.info-label {
+  font-feature-settings:
+    "liga" off,
+    "clig" off;
+  display: flex;
+  min-height: 110px;
+  padding-top: 15px;
+  padding-bottom: 71px;
+  align-items: flex-start;
+  gap: 8px;
+  color: #4d4d4d;
+  font-weight: 600;
+  justify-content: flex-start;
+  flex-grow: 1;
+  flex-shrink: 1;
+  width: 128px;
+  min-width: 128px;
+}
+
+.info-value {
+  color: #333;
+  font-feature-settings:
+    "liga" off,
+    "clig" off;
+  display: flex;
+  min-width: 240px;
+  min-height: 110px;
+  padding-top: 15px;
+  padding-bottom: 25px;
+  flex-direction: column;
+  align-items: stretch;
+  font-weight: 300;
+  line-height: 24px;
+  justify-content: flex-start;
+  flex-grow: 1;
+  flex-shrink: 1;
+  width: 306px;
+}
+
+.fee-main,
+.issuance-main {
+  color: #333;
+  font-feature-settings:
+    "liga" off,
+    "clig" off;
+  font-size: 16px;
+  font-weight: 300;
+  margin-bottom: 11px;
+}
+
+.fee-note,
+.issuance-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.note-symbol {
+  color: #333;
+  font-feature-settings:
+    "liga" off,
+    "clig" off;
+  flex-shrink: 0;
+}
+
+.note-text {
+  color: #333;
+  font-feature-settings:
+    "liga" off,
+    "clig" off;
+  line-height: 21px;
+  flex: 1;
+}
+
+.services-list {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 30px;
+  font-family:
+    "Hiragino Kaku Gothic Pro",
+    -apple-system,
+    "Roboto",
+    "Helvetica",
+    sans-serif;
+  color: #333;
+  font-weight: 300;
+  justify-content: flex-start;
+  margin-bottom: 8px;
+}
+
+.service-item {
+  color: #333;
+  font-feature-settings:
+    "liga" off,
+    "clig" off;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  justify-content: flex-start;
+}
+
+.services-link {
+  color: #006a9e;
+  font-feature-settings:
+    "liga" off,
+    "clig" off;
+  display: flex;
+  min-height: 35px;
+  width: 100%;
+  align-items: center;
+  overflow: hidden;
+  font-family:
+    "Noto Sans CJK JP",
+    -apple-system,
+    "Roboto",
+    "Helvetica",
+    sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  justify-content: flex-end;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.services-link:hover {
+  color: #004d75;
+  text-decoration: underline;
+}
+
+.comments-section {
+  display: flex;
+  width: 100%;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  flex-direction: column;
+  align-items: stretch;
+  font-family:
+    "Hiragino Kaku Gothic Pro",
+    -apple-system,
+    "Roboto",
+    "Helvetica",
+    sans-serif;
+  font-size: 14px;
+  color: #686868;
+  font-weight: 300;
+  justify-content: flex-start;
+  margin-top: 20px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.comment-row {
+  display: flex;
+  width: 100%;
+  align-items: flex-start;
+  gap: 8px;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin-bottom: 4px;
+}
+
+.comment-row:last-child {
+  margin-bottom: 0;
+}
+
+.comment-text {
+  color: #686868;
+  font-feature-settings:
+    "liga" off,
+    "clig" off;
+  flex: 1;
+}
+
+/* Responsive Design for Accordion */
+@media (max-width: 768px) {
+  .accordion-section {
+    margin-top: 40px;
+    padding: 40px 20px;
+  }
+
+  .accordion-title {
+    font-size: 20px;
+  }
+
+  .info-grid {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .info-column-left,
+  .info-column-right {
+    width: 100%;
+  }
+
+  .info-label {
+    width: 100%;
+    min-width: auto;
+    padding-bottom: 10px;
+    min-height: auto;
+  }
+
+  .info-value {
+    min-width: 100%;
+    width: 100%;
+    padding-top: 0;
+    min-height: auto;
+  }
+
+  .info-row {
+    flex-direction: column;
+    min-height: auto;
+    padding: 15px 0;
+  }
+
+  .services-list {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .services-link {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .accordion-section {
+    padding: 20px 10px;
+  }
+
+  .accordion-header {
+    padding: 12px 16px;
+  }
+
+  .accordion-title {
+    font-size: 18px;
+  }
+
+  .accordion-content {
+    padding: 15px;
+  }
+
+  .info-label {
+    font-size: 14px;
+  }
+
+  .info-value {
+    font-size: 14px;
+  }
+
+  .fee-note,
+  .issuance-note {
+    font-size: 12px;
+  }
+
+  .services-list {
+    font-size: 12px;
+  }
+
+  .comments-section {
+    font-size: 12px;
+  }
 }
