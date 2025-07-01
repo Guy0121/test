@@ -42,6 +42,120 @@
           ><span>のでお得</span><span>です。</span>
         </div>
       </div>
+
+      <!-- Family Card Information Accordion -->
+      <div class="info-section">
+        <div class="accordion-container">
+          <div class="accordion-item">
+            <button class="accordion-header" onclick="toggleAccordion()">
+              <span class="accordion-title">家族カードの基本情報</span>
+              <span class="accordion-icon">▼</span>
+            </button>
+            <div class="accordion-content expanded" id="accordion-content">
+              <div class="info-table">
+                <!-- Left Column -->
+                <div class="info-column">
+                  <!-- 対象者 -->
+                  <div class="info-row">
+                    <div class="info-label">対象者</div>
+                    <div class="info-value">
+                      18歳以上の生計をともにする配偶者<br />
+                      （内縁の相手方・同性パートナー含む）<br />
+                      ・両親・子供に限ります
+                    </div>
+                  </div>
+
+                  <!-- 年会費 -->
+                  <div class="info-row">
+                    <div class="info-label">年会費</div>
+                    <div class="info-value">
+                      <div class="fee-main">永年無料</div>
+                      <div class="fee-note">
+                        <span class="note-symbol">※</span>
+                        <span class="note-text"
+                          >楽天ゴールドカード、楽天プレミアムカード<br />会員のみ550円（税込み）</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- ご利用可能額 -->
+                  <div class="info-row">
+                    <div class="info-label">ご利用可能額</div>
+                    <div class="info-value">
+                      本カード会員様のご利用可能枠以内
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Right Column -->
+                <div class="info-column">
+                  <!-- デザイン・ブランド -->
+                  <div class="info-row">
+                    <div class="info-label">デザイン・ブランド</div>
+                    <div class="info-value">本カード会員様と同じ</div>
+                  </div>
+
+                  <!-- 発行可能枚数 -->
+                  <div class="info-row">
+                    <div class="info-label">発行可能枚数</div>
+                    <div class="info-value">
+                      <div class="issuance-main">本カード会員様と同じ</div>
+                      <div class="issuance-note">
+                        <span class="note-symbol">※</span>
+                        <span class="note-text"
+                          >「お申し込み中」「発行手続き中」<br />の本カードも含む</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- サービス・保険 -->
+                  <div class="info-row">
+                    <div class="info-label">サービス・保険</div>
+                    <div class="info-value">
+                      <div class="services-list">
+                        <span class="service-item">🛡️ カード盗難保険</span>
+                        <span class="service-item">✈️ 海外旅行保険</span>
+                      </div>
+                      <div class="services-link">詳しくは���ちら</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Footer Notes -->
+              <div class="info-notes">
+                <div class="note-row">
+                  <span class="note-symbol">※</span>
+                  <span class="note-text"
+                    >楽天銀行カード、楽天カードアカデミー、楽天ビジネスカード、家族カード会員様はお申し込みいただけません。</span
+                  >
+                </div>
+                <div class="note-row">
+                  <span class="note-symbol">※</span>
+                  <span class="note-text">海外旅行傷害保険：最高2,000万円</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+
+    <script>
+      function toggleAccordion() {
+        const content = document.getElementById("accordion-content");
+        const icon = document.querySelector(".accordion-icon");
+
+        if (content.classList.contains("expanded")) {
+          content.classList.remove("expanded");
+          icon.style.transform = "rotate(-90deg)";
+        } else {
+          content.classList.add("expanded");
+          icon.style.transform = "rotate(0deg)";
+        }
+      }
+    </script>
   </body>
 </html>
