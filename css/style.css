@@ -708,3 +708,398 @@ body {
     font-size: 12px;
   }
 }
+
+/* Family Card Basic Information Accordion */
+.accordion-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 60px;
+  padding: 60px 0;
+}
+
+.accordion-wrapper {
+  display: flex;
+  width: 100%;
+  max-width: 1048px;
+  flex-direction: column;
+  align-items: stretch;
+  font-family:
+    "Rakuten Sans JP",
+    -apple-system,
+    "Roboto",
+    "Helvetica",
+    sans-serif;
+  font-size: 16px;
+  color: #333;
+  font-weight: 600;
+  justify-content: center;
+}
+
+.accordion-header {
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  width: 100%;
+  padding: 16px 24px;
+  gap: 8px;
+  justify-content: space-between;
+  background: #fff;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.accordion-header:hover {
+  background-color: #f8f9fa;
+}
+
+.accordion-title {
+  color: #333;
+  font-feature-settings:
+    "liga" off,
+    "clig" off;
+  flex: 1;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.accordion-icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.accordion-content {
+  border-radius: 0 0 8px 8px;
+  display: flex;
+  margin-top: 8px;
+  width: 100%;
+  padding: 19px;
+  flex-direction: column;
+  background: #fff;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+
+.accordion-content.expanded {
+  max-height: 1000px;
+}
+
+.info-grid {
+  display: flex;
+  width: 100%;
+  max-width: 1010px;
+  align-items: start;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.info-column-left,
+.info-column-right {
+  display: flex;
+  min-width: 240px;
+  min-height: 330px;
+  flex-direction: column;
+  align-items: stretch;
+  font-family:
+    "Hiragino Kaku Gothic Pro",
+    -apple-system,
+    "Roboto",
+    "Helvetica",
+    sans-serif;
+  justify-content: flex-start;
+  width: 498px;
+}
+
+.info-column-right {
+  width: 497px;
+}
+
+.info-row {
+  border-color: #d1d1d1;
+  border-style: solid;
+  border-bottom-width: 1px;
+  display: flex;
+  min-height: 110px;
+  width: 100%;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 16px;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.info-row:last-child {
+  border-bottom: none;
+}
+
+.info-label {
+  font-feature-settings:
+    "liga" off,
+    "clig" off;
+  display: flex;
+  min-height: 110px;
+  padding-top: 15px;
+  padding-bottom: 71px;
+  align-items: flex-start;
+  gap: 8px;
+  color: #4d4d4d;
+  font-weight: 600;
+  justify-content: flex-start;
+  flex-grow: 1;
+  flex-shrink: 1;
+  width: 128px;
+  min-width: 128px;
+}
+
+.info-value {
+  color: #333;
+  font-feature-settings:
+    "liga" off,
+    "clig" off;
+  display: flex;
+  min-width: 240px;
+  min-height: 110px;
+  padding-top: 15px;
+  padding-bottom: 25px;
+  flex-direction: column;
+  align-items: stretch;
+  font-weight: 300;
+  line-height: 24px;
+  justify-content: flex-start;
+  flex-grow: 1;
+  flex-shrink: 1;
+  width: 306px;
+}
+
+.fee-main,
+.issuance-main {
+  color: #333;
+  font-feature-settings:
+    "liga" off,
+    "clig" off;
+  font-size: 16px;
+  font-weight: 300;
+  margin-bottom: 11px;
+}
+
+.fee-note,
+.issuance-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.note-symbol {
+  color: #333;
+  font-feature-settings:
+    "liga" off,
+    "clig" off;
+  flex-shrink: 0;
+}
+
+.note-text {
+  color: #333;
+  font-feature-settings:
+    "liga" off,
+    "clig" off;
+  line-height: 21px;
+  flex: 1;
+}
+
+.services-list {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 30px;
+  font-family:
+    "Hiragino Kaku Gothic Pro",
+    -apple-system,
+    "Roboto",
+    "Helvetica",
+    sans-serif;
+  color: #333;
+  font-weight: 300;
+  justify-content: flex-start;
+  margin-bottom: 8px;
+}
+
+.service-item {
+  color: #333;
+  font-feature-settings:
+    "liga" off,
+    "clig" off;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  justify-content: flex-start;
+}
+
+.services-link {
+  color: #006a9e;
+  font-feature-settings:
+    "liga" off,
+    "clig" off;
+  display: flex;
+  min-height: 35px;
+  width: 100%;
+  align-items: center;
+  overflow: hidden;
+  font-family:
+    "Noto Sans CJK JP",
+    -apple-system,
+    "Roboto",
+    "Helvetica",
+    sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  justify-content: flex-end;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.services-link:hover {
+  color: #004d75;
+  text-decoration: underline;
+}
+
+.comments-section {
+  display: flex;
+  width: 100%;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  flex-direction: column;
+  align-items: stretch;
+  font-family:
+    "Hiragino Kaku Gothic Pro",
+    -apple-system,
+    "Roboto",
+    "Helvetica",
+    sans-serif;
+  font-size: 14px;
+  color: #686868;
+  font-weight: 300;
+  justify-content: flex-start;
+  margin-top: 20px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.comment-row {
+  display: flex;
+  width: 100%;
+  align-items: flex-start;
+  gap: 8px;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin-bottom: 4px;
+}
+
+.comment-row:last-child {
+  margin-bottom: 0;
+}
+
+.comment-text {
+  color: #686868;
+  font-feature-settings:
+    "liga" off,
+    "clig" off;
+  flex: 1;
+}
+
+/* Responsive Design for Accordion */
+@media (max-width: 768px) {
+  .accordion-section {
+    margin-top: 40px;
+    padding: 40px 20px;
+  }
+
+  .accordion-title {
+    font-size: 20px;
+  }
+
+  .info-grid {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .info-column-left,
+  .info-column-right {
+    width: 100%;
+  }
+
+  .info-label {
+    width: 100%;
+    min-width: auto;
+    padding-bottom: 10px;
+    min-height: auto;
+  }
+
+  .info-value {
+    min-width: 100%;
+    width: 100%;
+    padding-top: 0;
+    min-height: auto;
+  }
+
+  .info-row {
+    flex-direction: column;
+    min-height: auto;
+    padding: 15px 0;
+  }
+
+  .services-list {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .services-link {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .accordion-section {
+    padding: 20px 10px;
+  }
+
+  .accordion-header {
+    padding: 12px 16px;
+  }
+
+  .accordion-title {
+    font-size: 18px;
+  }
+
+  .accordion-content {
+    padding: 15px;
+  }
+
+  .info-label {
+    font-size: 14px;
+  }
+
+  .info-value {
+    font-size: 14px;
+  }
+
+  .fee-note,
+  .issuance-note {
+    font-size: 12px;
+  }
+
+  .services-list {
+    font-size: 12px;
+  }
+
+  .comments-section {
+    font-size: 12px;
+  }
+}

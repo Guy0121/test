@@ -35,13 +35,130 @@
         </div>
         <div class="family-card-description">
           <span>家族カードとは、本カード会員様のカード利用分と</span><br />
-          <span class="text-bold">まとめて同���口座から引き落とせる</span
+          <span class="text-bold">まとめて同じ口座から引き落とせる</span
           ><span>ご家族様用のクレジットカードです。</span><br />
           <span>また、家族カードご利用分も、</span
           ><span class="text-bold">本カード会員様同様にポイントが貯まる</span
           ><span>のでお得</span><span>です。</span>
         </div>
       </div>
+
+      <!-- Family Card Basic Information Accordion -->
+      <div class="accordion-section">
+        <div class="accordion-wrapper">
+          <div class="accordion-header" onclick="toggleAccordion()">
+            <div class="accordion-title">家族カードの基本情報</div>
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/15f08f7b31004c089487fad17e541fff/586e519617d9fd2874d04c9e7cf3e39ba9381e0f?placeholderIfAbsent=true"
+              alt="chevron down"
+              class="accordion-icon"
+            />
+          </div>
+
+          <div class="accordion-content expanded" id="accordion-content">
+            <div class="info-grid">
+              <!-- Left Column -->
+              <div class="info-column-left">
+                <!-- 対象者 -->
+                <div class="info-row">
+                  <div class="info-label">対象者</div>
+                  <div class="info-value">
+                    18歳以上の生計をともにする配偶者<br />
+                    （内縁の相手方・同性パートナー含む）<br />
+                    ・両親・子供に限ります
+                  </div>
+                </div>
+
+                <!-- 年会費 -->
+                <div class="info-row">
+                  <div class="info-label">年会費</div>
+                  <div class="info-value">
+                    <div class="fee-main">永年無料</div>
+                    <div class="fee-note">
+                      <span class="note-symbol">※</span>
+                      <div class="note-text">
+                        楽天ゴールドカード、楽天プレミアムカード<br />
+                        会員のみ550円（税込み）
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- ご利用可能額 -->
+                <div class="info-row">
+                  <div class="info-label">ご利用可能額</div>
+                  <div class="info-value">本カード会員様のご利用可能枠以内</div>
+                </div>
+              </div>
+
+              <!-- Right Column -->
+              <div class="info-column-right">
+                <!-- デザイン・ブランド -->
+                <div class="info-row">
+                  <div class="info-label">デザイン・ブランド</div>
+                  <div class="info-value">本カード会員様と同じ</div>
+                </div>
+
+                <!-- 発行可能枚数 -->
+                <div class="info-row">
+                  <div class="info-label">発行可能枚数</div>
+                  <div class="info-value">
+                    <div class="issuance-main">本カード会員様と同じ</div>
+                    <div class="issuance-note">
+                      <span class="note-symbol">※</span>
+                      <div class="note-text">
+                        「お申し込み中」「発行手続き中」<br />
+                        の本カードも含む
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- サービス・保険 -->
+                <div class="info-row">
+                  <div class="info-label">サービス・保険</div>
+                  <div class="info-value">
+                    <div class="services-list">
+                      <div class="service-item">カード盗難保険</div>
+                      <div class="service-item">海外旅行保険</div>
+                    </div>
+                    <div class="services-link">詳しくはこちら</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Footer Comments -->
+            <div class="comments-section">
+              <div class="comment-row">
+                <span class="note-symbol">※</span>
+                <div class="comment-text">
+                  楽天銀行カード、楽天カードアカデミー、楽天ビジネスカード、家族カード会員様はお申し込みいただけません。
+                </div>
+              </div>
+              <div class="comment-row">
+                <span class="note-symbol">※</span>
+                <div class="comment-text">海外旅行傷害保険：最高2,000万円</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+
+    <script>
+      function toggleAccordion() {
+        const content = document.getElementById("accordion-content");
+        const icon = document.querySelector(".accordion-icon");
+
+        if (content.classList.contains("expanded")) {
+          content.classList.remove("expanded");
+          icon.style.transform = "rotate(180deg)";
+        } else {
+          content.classList.add("expanded");
+          icon.style.transform = "rotate(0deg)";
+        }
+      }
+    </script>
   </body>
 </html>
