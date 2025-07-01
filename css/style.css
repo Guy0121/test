@@ -1103,3 +1103,293 @@ body {
     font-size: 12px;
   }
 }
+
+/* Benefits Section */
+.benefits-section {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  padding: 60px 0;
+  background: #fbf6f3;
+  overflow: hidden;
+}
+
+.benefits-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 20px;
+}
+
+.benefits-title {
+  color: #4d4d4d;
+  text-align: center;
+  font-feature-settings:
+    "liga" off,
+    "clig" off;
+  font-family:
+    "Hiragino Kaku Gothic Pro",
+    -apple-system,
+    "Roboto",
+    "Helvetica",
+    sans-serif;
+  font-size: 26px;
+  font-weight: 600;
+  margin: 0 0 30px 0;
+}
+
+.title-text {
+  color: #333;
+}
+
+.title-number {
+  color: #ec0606;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  width: 100%;
+  max-width: 1048px;
+}
+
+.benefit-card {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  border-radius: 8px;
+  border: 1px solid #ebebeb;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.06);
+  background: #fff;
+  padding: 16px;
+  min-width: 240px;
+  width: 100%;
+  max-width: 329px;
+  justify-self: center;
+}
+
+.benefit-card-simple {
+  padding-bottom: 53px;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  flex: 1;
+}
+
+.card-icon {
+  align-self: center;
+  width: 98px;
+  height: 98px;
+  object-fit: contain;
+  margin-bottom: 16px;
+}
+
+.card-text {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  flex: 1;
+}
+
+.card-title {
+  color: #333;
+  font-feature-settings:
+    "liga" off,
+    "clig" off;
+  font-family:
+    "Rakuten Sans JP",
+    -apple-system,
+    "Roboto",
+    "Helvetica",
+    sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 30px;
+  margin: 0 0 8px 0;
+}
+
+.card-description {
+  color: #333;
+  font-feature-settings:
+    "liga" off,
+    "clig" off;
+  font-family:
+    "Rakuten Sans JP",
+    -apple-system,
+    "Roboto",
+    "Helvetica",
+    sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  margin: 0 0 8px 0;
+}
+
+.card-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-family:
+    "Hiragino Kaku Gothic Pro",
+    -apple-system,
+    "Roboto",
+    "Helvetica",
+    sans-serif;
+  font-size: 14px;
+  color: #686868;
+  font-weight: 300;
+  margin-top: auto;
+}
+
+.note-symbol {
+  color: #686868;
+  font-feature-settings:
+    "liga" off,
+    "clig" off;
+  flex-shrink: 0;
+}
+
+.note-text {
+  color: #686868;
+  font-feature-settings:
+    "liga" off,
+    "clig" off;
+  line-height: 21px;
+  flex: 1;
+}
+
+.card-link {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 4px;
+  margin-top: 16px;
+  color: #006a9e;
+  font-family:
+    "Rakuten Sans JP",
+    -apple-system,
+    "Roboto",
+    "Helvetica",
+    sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.card-link:hover {
+  color: #004d75;
+  text-decoration: underline;
+}
+
+.card-link span {
+  color: inherit;
+  font-feature-settings:
+    "liga" off,
+    "clig" off;
+}
+
+.link-icon {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+/* Responsive Design for Benefits Section */
+@media (max-width: 1024px) {
+  .benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .benefit-card {
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .benefits-section {
+    padding: 40px 0;
+  }
+
+  .benefits-container {
+    padding: 0 15px;
+  }
+
+  .benefits-title {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+
+  .benefits-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .benefit-card {
+    max-width: 100%;
+    min-width: auto;
+  }
+
+  .card-title {
+    font-size: 18px;
+    line-height: 26px;
+  }
+
+  .card-description {
+    font-size: 13px;
+    line-height: 19px;
+  }
+
+  .card-note {
+    font-size: 12px;
+  }
+
+  .card-link {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .benefits-section {
+    padding: 30px 0;
+  }
+
+  .benefits-container {
+    padding: 0 10px;
+  }
+
+  .benefits-title {
+    font-size: 20px;
+  }
+
+  .card-icon {
+    width: 80px;
+    height: 80px;
+  }
+
+  .card-title {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .card-description {
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .benefit-card {
+    padding: 12px;
+  }
+
+  .benefit-card-simple {
+    padding-bottom: 40px;
+  }
+}
