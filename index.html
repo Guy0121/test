@@ -1,29 +1,367 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>シンプルコーポレートサイト</title>
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>株式会社[あなたの会社名] - 公式ウェブサイト</title>
+    <style>
+        /* style.css の内容をここに記述します */
+
+        /* 基本設定 */
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ヘッダー */
+        header {
+            background-color: #fff;
+            border-bottom: 1px solid #eee;
+            padding: 15px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        header .logo img {
+            height: 40px;
+            width: auto;
+        }
+
+        header nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        header nav ul li {
+            margin-left: 30px;
+        }
+
+        header nav ul li a {
+            text-decoration: none;
+            color: #555;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        header nav ul li a:hover {
+            color: #007bff;
+        }
+
+        /* メインセクション共通 */
+        section {
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        section:nth-of-type(even) {
+            background-color: #f9f9f9;
+        }
+
+        h1, h2 {
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+        }
+
+        h2 {
+            font-size: 2em;
+            border-bottom: 2px solid #007bff;
+            display: inline-block;
+            padding-bottom: 5px;
+            margin-bottom: 40px;
+        }
+
+        /* メインビジュアル */
+        #main-visual {
+            background-color: #e0f2f7;
+            color: #333;
+            padding: 80px 0;
+            overflow: hidden;
+        }
+
+        #main-visual img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        #main-visual h1 {
+            font-size: 3em;
+            margin-bottom: 15px;
+            color: #007bff;
+        }
+
+        #main-visual p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #007bff;
+            color: #fff;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* お知らせ */
+        #news dl {
+            text-align: left;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        #news dt {
+            font-weight: bold;
+            color: #007bff;
+            margin-bottom: 5px;
+            display: inline-block;
+            width: 100px;
+            vertical-align: top;
+        }
+
+        #news dd {
+            margin-left: 120px;
+            margin-bottom: 10px;
+            border-bottom: 1px dotted #ccc;
+            padding-bottom: 5px;
+        }
+
+        #news dd a {
+            text-decoration: none;
+            color: #333;
+            transition: color 0.3s ease;
+        }
+
+        #news dd a:hover {
+            color: #007bff;
+        }
+
+        .more-link {
+            text-align: right;
+            margin-top: 20px;
+        }
+
+        .more-link a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .more-link a:hover {
+            text-decoration: underline;
+        }
+
+        /* 事業内容 */
+        .service-list {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .service-item {
+            background-color: #fff;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            flex: 1;
+            min-width: 280px;
+            text-align: left;
+        }
+
+        .service-item h3 {
+            color: #007bff;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+
+        /* 会社概要 */
+        #about table {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        #about th, #about td {
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+        }
+
+        #about th {
+            background-color: #f0f0f0;
+            width: 150px;
+            font-weight: bold;
+        }
+
+        /* お問い合わせ */
+        #contact .btn {
+            margin-bottom: 20px;
+        }
+
+        #contact p {
+            font-size: 1.1em;
+        }
+
+        /* フッター */
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 0.9em;
+        }
+    </style>
 </head>
 <body>
-  <header class="builer-header-1">
-    <h1>シンプルコーポレートサイト</h1>
-  </header>
-  <nav class="builer-nav-2">
-    <ul>
-      <li><a href="index.html">ホーム</a></li>
-      <li><a href="pages/about.html">このサイトについて</a></li>
-      <li><a href="pages/services.html">サービス</a></li>
-      <li><a href="pages/contact.html">お問い合わせ</a></li>
-    </ul>
-  </nav>
-  <div class="builer-container-3">
-    <h2>ようこそ</h2>
-    <p>このコーポレートサイトは、会社概要やサービス内容を紹介するサンプルページです。</p>
-  </div>
-  <footer class="builer-footer-4">
-    <p>&copy; 2024 シンプルコーポレートサイト</p>
-  </footer>
+
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="/">
+                    <!-- ロゴ画像は適宜配置してください。例: images/logo.png -->
+                    <img src="https://via.placeholder.com/150x40?text=YOUR_LOGO" alt="株式会社[あなたの会社名]ロゴ">
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#about">会社概要</a></li>
+                    <li><a href="#service">事業内容</a></li>
+                    <li><a href="#news">お知らせ</a></li>
+                    <li><a href="#contact">お問い合わせ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="main-visual">
+            <div class="container">
+                <!-- メインビジュアル画像は適宜配置してください。例: images/main_visual.jpg -->
+                <img src="https://via.placeholder.com/960x400?text=Main+Visual+Image" alt="メインビジュアルイメージ">
+                <h1>未来を創造する、[あなたの会社名]</h1>
+                <p>私たちは革新的な技術とサービスで社会に貢献します。</p>
+                <a href="#contact" class="btn">お問い合わせはこちら</a>
+            </div>
+        </section>
+
+        <section id="news">
+            <div class="container">
+                <h2>お知らせ</h2>
+                <dl>
+                    <dt>2025.08.06</dt>
+                    <dd><a href="#">夏季休業のお知らせ</a></dd>
+                    <dt>2025.07.20</dt>
+                    <dd><a href="#">新サービス「〇〇ソリューション」を開始しました</a></dd>
+                    <dt>2025.06.15</dt>
+                    <dd><a href="#">ウェブサイトをリニューアルしました</a></dd>
+                </dl>
+                <p class="more-link"><a href="#">お知らせ一覧を見る</a></p>
+            </div>
+        </section>
+
+        <section id="service">
+            <div class="container">
+                <h2>事業内容</h2>
+                <div class="service-list">
+                    <div class="service-item">
+                        <h3>Webサイト制作</h3>
+                        <p>企画からデザイン、開発、運用まで一貫したWebサイト制作を提供します。</p>
+                    </div>
+                    <div class="service-item">
+                        <h3>システム開発</h3>
+                        <p>業務効率化や新規事業創出に貢献するカスタムシステムを開発します。</p>
+                    </div>
+                    <div class="service-item">
+                        <h3>コンサルティング</h3>
+                        <p>IT戦略立案からデジタル変革まで、お客様のビジネスを強力にサポートします。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="container">
+                <h2>会社概要</h2>
+                <table>
+                    <tr>
+                        <th>会社名</th>
+                        <td>株式会社[あなたの会社名]</td>
+                    </tr>
+                    <tr>
+                        <th>所在地</th>
+                        <td>〒100-0000 東京都千代田区〇〇1-2-3</td>
+                    </tr>
+                    <tr>
+                        <th>設立</th>
+                        <td>20XX年X月X日</td>
+                    </tr>
+                    <tr>
+                        <th>資本金</th>
+                        <td>1,000万円</td>
+                    </tr>
+                    <tr>
+                        <th>代表者</th>
+                        <td>代表取締役社長 [氏名]</td>
+                    </tr>
+                    <tr>
+                        <th>事業内容</th>
+                        <td>Webサイト制作、システム開発、ITコンサルティング 他</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+                <h2>お問い合わせ</h2>
+                <p>ご質問やご相談など、お気軽にお問い合わせください。</p>
+                <a href="mailto:info@yourcompany.com" class="btn">メールでのお問い合わせ</a>
+                <p>TEL: 03-XXXX-XXXX</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 [あなたの会社名]. All Rights Reserved.</p>
+        </div>
+    </footer>
+
 </body>
 </html>
