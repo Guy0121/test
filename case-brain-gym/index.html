@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Case Brain Gym Lite</title>
+<style>
+  body{margin:0;background:#f5f6fb;color:#1f2937;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif}
+  .app{max-width:760px;margin:auto;padding:24px 16px 48px}
+  .hero{background:#6956e8;color:#fff;border-radius:22px;padding:24px}
+  .hero h1{margin:7px 0;font-size:28px}.hero p{margin:0;opacity:.9;line-height:1.6}
+  .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;font-weight:900}
+  .tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:18px 0}
+  .tab{border:1px solid #e4e7ef;background:#fff;padding:13px 9px;border-radius:14px;font-weight:800;cursor:pointer}
+  .tab.active{background:#edeaff;border-color:#6956e8;color:#5b46de}
+  .card{background:#fff;border:1px solid #e4e7ef;border-radius:20px;padding:20px}
+  .badge{display:inline-block;background:#edeaff;color:#5b46de;padding:6px 9px;border-radius:999px;font-size:12px;font-weight:900}
+  .question{font-size:19px;font-weight:850;line-height:1.55;margin:16px 0}
+  .choice{display:block;width:100%;text-align:left;padding:13px;margin:9px 0;border:1px solid #e1e5ec;background:#fff;border-radius:13px;font-size:14px;line-height:1.5;cursor:pointer}
+  .choice:hover{border-color:#8e81ee}.choice.selected{background:#edeaff;border-color:#6956e8}.choice.correct{background:#e8faef;border-color:#20a866}.choice.wrong{background:#fff0f0;border-color:#e46b6b}
+  .btn{margin-top:14px;border:0;background:#1f2937;color:white;font-weight:900;padding:12px 16px;border-radius:12px;cursor:pointer}
+  .btn:disabled{opacity:.55}
+  .feedback{display:none;margin-top:14px;padding:12px;border-radius:12px;font-size:14px;line-height:1.55}
+  .feedback.good{display:block;background:#e8faef;color:#0d7046}.feedback.bad{display:block;background:#fff0f0;color:#9c3838}
+  .score{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:18px}
+  .score div{background:#fff;border:1px solid #e4e7ef;border-radius:14px;padding:13px}
+  .score b{font-size:22px}.score span{display:block;font-size:11px;color:#798295;margin-top:4px;font-weight:700}
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="top"><div>Case Brain Gym</div><div>🔥 <span id="count">0</span> lessons</div></div>
+  <section class="hero">
+    <div style="font-size:12px;font-weight:800;letter-spacing:.08em;opacity:.85">DAILY THINKING TRAINING</div>
+    <h1>1日1問、ケース脳を鍛える。</h1>
+    <p>分解する。深掘る。施策を生む。<br>答えるたびに、能力ゲージが伸びます。</p>
+  </section>
+
+  <div class="tabs">
+    <button class="tab active" onclick="setMode('cut',this)">🧩 分解</button>
+    <button class="tab" onclick="setMode('dig',this)">🔍 深掘り</button>
+    <button class="tab" onclick="setMode('create',this)">💡 施策</button>
+  </div>
+
+  <section class="card">
+    <span class="badge" id="badge">分解トレーニング</span>
+    <div class="question" id="question"></div>
+    <div id="choices"></div>
+    <button class="btn" id="submit" onclick="checkAnswer()">回答する</button>
+    <div class="feedback" id="feedback"></div>
+  </section>
+
+  <section class="score">
+    <div><b id="cutScore">0</b><span>分解力</span></div>
+    <div><b id="digScore">0</b><span>深掘り力</span></div>
+    <div><b id="createScore">0</b><span>施策創造力</span></div>
+  </section>
+</div>
+
+<script>
+var mode = 'cut';
+var selected = null;
+var lessons = 0;
+var score = {cut:0,dig:0,create:0};
+
+var quiz = {
+  cut:{
+    badge:'分解トレーニング',
+    q:'「カフェチェーンの利益を増やす」。最初の分解として最も筋がよいのは？',
+    a:[
+      '利益 = 売上 − コスト。売上は客数 × 客単価、コストは固定費・変動費に分ける。',
+      '広告・値引き・新商品・出店の4施策に分ける。',
+      '競合・顧客・自社の3Cで分析する。',
+      '新規客・既存客・離反客に分ける。'
+    ],
+    correct:0,
+    note:'まず利益を式に戻す。施策を出すのは、その後です。'
+  },
+  dig:{
+    badge:'深掘りトレーニング',
+    q:'売上が前年より10%下がった。次に最優先で確認すべきことは？',
+    a:[
+      '競合が新商品を出したか。',
+      '客数・客単価のどちらが、どの店舗・時間帯・顧客層で下がったか。',
+      'SNSで悪い口コミがあるか。',
+      'スタッフ研修が不足しているか。'
+    ],
+    correct:1,
+    note:'最初に変化の場所を特定する。原因の仮説は、その後に検証します。'
+  },
+  create:{
+    badge:'施策創造トレーニング',
+    q:'平日午後のカフェ空席を埋めたい。値下げ・人員増加は禁止。最もよい施策は？',
+    a:[
+      '全ドリンクを値引きする。',
+      'スタッフを増やして接客を改善する。',
+      '近隣企業向けに、午後限定の会議席＋事前注文プランを販売する。',
+      '店頭に「空いています」と書く。'
+    ],
+    correct:2,
+    note:'空席・時間帯・近隣企業という既存資産をつないだ施策です。'
+  }
+};
+
+function render(){
+  var q = quiz[mode];
+  selected = null;
+  document.getElementById('badge').textContent = q.badge;
+  document.getElementById('question').textContent = q.q;
+  document.getElementById('feedback').className = 'feedback';
+  document.getElementById('feedback').textContent = '';
+  document.getElementById('submit').disabled = false;
+  document.getElementById('submit').textContent = '回答する';
+
+  var box = document.getElementById('choices');
+  box.innerHTML = '';
+  for(var i=0;i<q.a.length;i++){
+    var b = document.createElement('button');
+    b.className = 'choice';
+    b.textContent = String.fromCharCode(65+i) + '. ' + q.a[i];
+    b.setAttribute('data-index',i);
+    b.onclick = function(){
+      var all = document.querySelectorAll('.choice');
+      for(var j=0;j<all.length;j++){all[j].className='choice';}
+      this.className='choice selected';
+      selected = Number(this.getAttribute('data-index'));
+    };
+    box.appendChild(b);
+  }
+}
+
+function setMode(next, el){
+  mode = next;
+  var tabs=document.querySelectorAll('.tab');
+  for(var i=0;i<tabs.length;i++){tabs[i].className='tab';}
+  el.className='tab active';
+  render();
+}
+
+function checkAnswer(){
+  if(selected === null){
+    alert('選択肢を1つ選んでください。脳トレも、まず入力からです。');
+    return;
+  }
+  var q=quiz[mode];
+  var all=document.querySelectorAll('.choice');
+  var fb=document.getElementById('feedback');
+  all[q.correct].className='choice correct';
+  if(selected === q.correct){
+    lessons += 1;
+    score[mode] += 10;
+    document.getElementById('count').textContent=lessons;
+    document.getElementById(mode+'Score').textContent=score[mode];
+    fb.className='feedback good';
+    fb.innerHTML='<b>正解！</b> '+q.note;
+    document.getElementById('submit').disabled=true;
+    document.getElementById('submit').textContent='完了 ✓';
+  }else{
+    all[selected].className='choice wrong';
+    fb.className='feedback bad';
+    fb.innerHTML='<b>惜しい。</b> '+q.note;
+  }
+}
+render();
+</script>
+</body>
+</html>
