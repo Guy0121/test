@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DayLap サポート</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #eef4ff;
+      --card: #ffffff;
+      --text: #1f2937;
+      --sub: #52606d;
+      --line: #dbe6f7;
+      --accent: #16538e;
+      --accent-soft: #e7f0fb;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
+      background:
+        radial-gradient(circle at top left, #f5f9ff 0, #f5f9ff 22%, transparent 48%),
+        linear-gradient(180deg, #fbfdff 0%, var(--bg) 100%);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    main {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 48px 20px 72px;
+    }
+
+    .hero,
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      box-shadow: 0 14px 40px rgba(25, 36, 54, 0.06);
+    }
+
+    .hero {
+      padding: 36px 32px;
+      margin-bottom: 20px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+
+    h1 {
+      margin: 14px 0 10px;
+      font-size: clamp(32px, 5vw, 52px);
+      line-height: 1.1;
+    }
+
+    h2 {
+      margin: 0 0 10px;
+      font-size: 24px;
+    }
+
+    p {
+      margin: 0;
+      color: var(--sub);
+    }
+
+    .grid {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      margin-top: 20px;
+    }
+
+    .card {
+      padding: 26px 24px;
+    }
+
+    ul {
+      margin: 14px 0 0;
+      padding-left: 18px;
+      color: var(--sub);
+    }
+
+    a {
+      color: var(--accent);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .contact {
+      margin-top: 22px;
+      padding: 18px 20px;
+      border-radius: 20px;
+      background: var(--accent-soft);
+      border: 1px solid var(--line);
+    }
+
+    .contact strong {
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .footer {
+      margin-top: 20px;
+      font-size: 14px;
+      color: #7a8694;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <span class="badge">Support</span>
+      <h1>DayLap</h1>
+      <p>
+        DayLapは、1日の行動をストップウォッチ感覚で記録できるiPhone向けライフログアプリです。
+        「今から何をするか」を選ぶだけで、前の行動が終わり、次の行動が始まります。
+      </p>
+      <div class="contact">
+        <strong>お問い合わせ</strong>
+        <p>不具合報告、ご質問、使い方の相談は、以下のメールアドレスまでご連絡ください。</p>
+        <p><a href="mailto:toshimichi01211999@gmail.com">toshimichi01211999@gmail.com</a></p>
+        <p>ご連絡の際は、アプリ名、困っている内容、使っている iPhone の機種名、iOSのバージョンを書くと確認しやすくなります。</p>
+      </div>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <h2>主な機能</h2>
+        <ul>
+          <li>今日を開始・終了する</li>
+          <li>行動カテゴリーをタップして記録を切り替える</li>
+          <li>Dynamic Island / ロック画面での経過時間表示</li>
+          <li>今日の履歴の確認・編集</li>
+          <li>今日・週間の円グラフでの内訳確認</li>
+          <li>端末内へのローカル保存</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2>よくあるご質問</h2>
+        <ul>
+          <li>アカウント登録やサインインは不要です。</li>
+          <li>記録した内容は、この端末内に保存されます。</li>
+          <li>アプリを削除すると、端末内に保存されたデータも削除される場合があります。</li>
+          <li>Dynamic Islandの表示は、Apple側の仕様で数時間で一度消えることがありますが、記録データ自体は消えません。</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2>サポートで受け付ける内容</h2>
+        <ul>
+          <li>アプリが開かない、落ちる、保存できないなどの不具合</li>
+          <li>Live Activity（Dynamic Island / ロック画面表示）に関する質問</li>
+          <li>使い方が分からないときの問い合わせ</li>
+        </ul>
+      </article>
+    </section>
+
+    <p class="footer">Last updated: September 27, 2026</p>
+  </main>
+</body>
+</html>
